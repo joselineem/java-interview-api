@@ -25,4 +25,20 @@ public class WidgetService {
     return widgetRepository.findAll();
   }
 
+  public void deleteWidgetByName(String name) {
+    widgetRepository.deleteByName(name);
+  }
+
+  public Widget create(Widget widget) {
+    return widgetRepository.save(widget);
+  }
+
+public Widget getWidgetByName(String name) {
+    return widgetRepository.getByName(name).orElse(null);
+}
+
+public Widget updateWidget(Widget widget) {
+    return widgetRepository.update(widget);
+}
+
 }
